@@ -4,8 +4,8 @@ const StatisticsSchema = new mongoose.Schema({
 	timesGotUpInMonth: Number
 });
 
-const StatisticsModel = mongoose.model("Statistics", StatisticsSchema);
+const statisticsModel = mongoose.model("statistics", StatisticsSchema);
 
 module.exports = {
-StatisticsModel
+    statisticsModel
 };

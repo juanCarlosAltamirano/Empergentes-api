@@ -2,7 +2,7 @@ const express = require("express");
 const { config } = require("dotenv");
 const { connect } = require("./database");
 const { coreModel } = require("./core");
-const { StatisticsModel } = require("./StatisticsModel");
+const { statisticsModel } = require("./StatisticsModel.js");
 const asyncHandler = require('express-async-handler')
 
 config();
@@ -24,9 +24,8 @@ app.post("/api", (req, res, next) => {
 connect();
 
 app.get("/statistics", asyncHandler(async(req, res, next) => {
-  const element = await StatisticsModel.find({});
-  console.log("Element", element);
-  res.sendStatus(202);
+  const element = await statisticsModel.findOne({});
+  res.send(element);
 }));
 
 
