@@ -24,7 +24,7 @@ app.post("/api", (req, res, next) => {
 connect();
 
 app.get("/statistics", asyncHandler(async(req, res, next) => {
-  const element = await StatisticsModel.find();
+  const element = await StatisticsModel.find({});
   console.log("Element", element);
   res.sendStatus(202);
 }));
